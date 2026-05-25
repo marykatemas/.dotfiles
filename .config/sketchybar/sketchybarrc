@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+source "$HOME/.config/sketchybar/sourcefile.sh"
+
+bar=(
+  position=top
+  height=45
+  y_offset=0
+  padding_left=8
+  padding_right=8
+  color="$SKETCHYBAR_BG"
+  notch_width=310
+)
+
+defaults=(
+  icon.font="SF Pro:Medium:16.0"
+  icon.color="$BASE"
+  icon.padding_left=3
+  icon.padding_right=3
+  label.font="SF Pro:Medium:16.0"
+  label.color="$BASE"
+  label.padding_left=3
+  label.padding_right=3
+  padding_left=2
+  padding_right=2
+  y_offset=0
+  icon.y_offset=0
+  label.y_offset=0
+)
+
+sketchybar --bar "${bar[@]}" --default "${defaults[@]}"
+
+# sbar-cpu_usage_helper
+HELPER="git.felix.helper"
+pkill -f "$CONFIG_DIR/helpers/sbar-cpu_usage_helper/sbar-cpu_usage_helper" 2>/dev/null
+(cd "$CONFIG_DIR/helpers/sbar-cpu_usage_helper" && make)
+"$CONFIG_DIR/helpers/sbar-cpu_usage_helper/sbar-cpu_usage_helper" "$HELPER" >/dev/null 2>&1 &
+
+# sbar-cpu_temp_helper
+CARGO_BIN="${CARGO_BIN:-$HOME/.cargo/bin/cargo}"
+pkill -x sbar-cpu_temp_helper 2>/dev/null
+(cd "$CONFIG_DIR/helpers/sbar-cpu_temp_helper" && "$CARGO_BIN" build --release)
+"$CONFIG_DIR/helpers/sbar-cpu_temp_helper/target/release/sbar-cpu_temp_helper" >/dev/null 2>&1 &
+
+# sbar-network_speed_helper
+CARGO_BIN="${CARGO_BIN:-$HOME/.cargo/bin/cargo}"
+pkill -x sbar-network_speed_helper 2>/dev/null
+(cd "$CONFIG_DIR/helpers/sbar-network_speed_helper" && "$CARGO_BIN" build --release)
+"$CONFIG_DIR/helpers/sbar-network_speed_helper/target/release/sbar-network_speed_helper" >/dev/null 2>&1 &
+
+# weather daemon (not a helper)
+pkill -f "$CONFIG_DIR/plugins/weather/plugin.sh loop" 2>/dev/null
+"$CONFIG_DIR/plugins/weather/plugin.sh" loop >/dev/null 2>&1 &
+
+# events
+sketchybar --add event aerospace_mode_change
+sketchybar --add event aerospace_workspace_change
+sketchybar --add event input_source_change AppleSelectedInputSourcesChangedNotification
+sketchybar --add event audio_input_change
+sketchybar --add event audio_output_change
+sketchybar --add event network_speed_update
+sketchybar --add event cpu_temp_update
+
+items=(
+  # left
+  apple
+  front_app
+  stopwatch
+  mode
+  aerospace_workspace
+  spacer_left
+  input_source
+  audio_input
+  audio_output
+  # notch left (q)
+  external_monitor_gap_left
+  date
+  weather
+  geo_flag
+  # center
+  external_monitor
+  # notch right (e)
+  external_monitor_gap_right
+  time
+  dnd
+  notifications
+  # right
+  battery
+  control_center
+  network_upload
+  network_download
+  network_status
+  latency
+  vpn
+  cpu_temp
+  cpu_usage
+  spacer_right
+  brew_outdated
+  caffeinate
+)
+
+for item in "${items[@]}"; do
+  source "$ITEM_DIR/$item.sh"
+done
+
+# bracket item groups (left, q, center, e, right + custom spacers)
+bracket_props=(
+  background.drawing=on
+  background.color="$BRACKET_BG"
+  background.border_color="$BRACKET_BORDER"
+  background.height=32
+  background.corner_radius=10
+  background.border_width=1
+)
+
+sketchybar --add bracket left_bracket \
+  apple front_app stopwatch aerospace_mode \
+  workspace.prev workspace.focused \
+  --set left_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket spacer_left_bracket \
+  input_source audio_input audio_output \
+  --set spacer_left_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket q_bracket \
+  date weather geo_flag \
+  --set q_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket center_bracket \
+  external_monitor \
+  --set center_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket e_bracket \
+  time dnd notifications \
+  --set e_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket right_bracket \
+  battery control_center network_upload network_download \
+  network_status latency vpn cpu_temp \
+  cpu.top cpu.percent cpu.sys cpu.user \
+  --set right_bracket "${bracket_props[@]}"
+
+sketchybar --add bracket spacer_right_bracket \
+  brew_outdated caffeinate \
+  --set spacer_right_bracket "${bracket_props[@]}"
+
+# sketchybar --hotload on
+sketchybar --update

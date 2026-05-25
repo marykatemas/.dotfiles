@@ -1,0 +1,46 @@
+# Television channel for sesh session management
+# https://github.com/joshmedeski/sesh
+
+[metadata]
+name = "sesh"
+description = "Session manager integrating tmux sessions, zoxide directories, and config paths"
+requirements = ["sesh", "fd", "tmux"]
+
+[source]
+# Multiple source commands for cycling through different modes
+# Press Ctrl+S to cycle between sources
+command = [
+  { name = "All", run = "sesh list --icons" },
+  { name = "tmux", run = "sesh list -t --icons" },
+  { name = "ssh", run = "tmux list-windows -a -f '#{==:#{window_name},ssh}' -F 'ssh #{window_id}' | sort -V" },
+  # { name = "Configs",     run = "sesh list -c --icons" },
+  # { name = "Zoxide",      run = "sesh list -z --icons" },
+  # { name = "Directories", run = "fd -H -d 2 -t d -E .Trash . ~" },
+]
+ansi = true
+frecency = false # handled by sesh
+no_sort = true # handled by sesh
+output = "{strip_ansi|split: :1..|join: }"
+
+[preview]
+# Values starting with @ are tmux window IDs from the ssh window source.
+command = "target='{strip_ansi|split: :1..|join: }'; if [[ $target == @* ]]; then tmux capture-pane -e -t \"$target\" -p 2>/dev/null; else sesh preview \"$target\"; fi"
+
+[ui.preview_panel]
+size = 70
+
+[keybindings]
+enter = "actions:connect"
+ctrl-d = ["actions:kill_session", "reload_source"]
+
+[actions.connect]
+description = "Connect to selected session"
+# Values starting with @ are tmux window IDs from the ssh window source.
+command = "target='{strip_ansi|split: :1..|join: }'; if [[ $target == @* ]]; then tmux switch-client -t \"$target\"; else sesh connect \"$target\"; fi"
+mode = "execute"
+
+[actions.kill_session]
+description = "Kill selected tmux target (press Ctrl+r to reload)"
+# Values starting with @ are tmux window IDs from the ssh window source.
+command = "target='{strip_ansi|split: :1..|join: }'; if [[ $target == @* ]]; then tmux kill-window -t \"$target\"; else tmux kill-session -t \"$target\"; fi"
+mode = "fork"
