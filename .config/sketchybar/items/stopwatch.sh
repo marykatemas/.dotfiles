@@ -9,6 +9,6 @@ stopwatch=(
   click_script="$PLUGIN_DIR/stopwatch/click.sh"
 )
 
-sketchybar --add item stopwatch left \
+sketchybar --add item stopwatch e \
   --set stopwatch "${stopwatch[@]}" \
   --subscribe stopwatch system_woke

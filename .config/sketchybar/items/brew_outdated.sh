@@ -10,7 +10,7 @@ brew_outdated=(
   popup.background.color="$BRACKET_BG"
   popup.background.border_color="$BRACKET_BORDER"
   popup.background.height=32
-  popup.background.corner_radius=10
+  popup.background.corner_radius=8
   popup.background.border_width=1
 )
 

@@ -9,8 +9,7 @@ aerospace_mode=(
   label.background.corner_radius=4
   label.background.height=16
   label.font="SF Pro:Bold:13.0"
-  icon.drawing=on
-  icon=""
+  icon.drawing=off
   script="$PLUGIN_DIR/mode/plugin.sh"
 )
 

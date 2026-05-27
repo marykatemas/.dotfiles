@@ -64,7 +64,6 @@ sketchybar --add event cpu_temp_update
 items=(
   # left
   apple
-  stopwatch
   mode
   aerospace_workspace
   front_app_pointer
@@ -85,6 +84,7 @@ items=(
   time
   dnd
   notifications
+  stopwatch
   # right
   battery
   control_center
@@ -110,12 +110,12 @@ bracket_props=(
   background.color="$BRACKET_BG"
   background.border_color="$BRACKET_BORDER"
   background.height=32
-  background.corner_radius=10
+  background.corner_radius=8
   background.border_width=1
 )
 
 sketchybar --add bracket left_bracket \
-  apple stopwatch aerospace_mode \
+  apple aerospace_mode \
   workspace.prev workspace.focused front_app_pointer front_app \
   --set left_bracket "${bracket_props[@]}"
 
@@ -132,7 +132,7 @@ sketchybar --add bracket center_bracket \
   --set center_bracket "${bracket_props[@]}"
 
 sketchybar --add bracket e_bracket \
-  time dnd notifications \
+  time dnd notifications stopwatch \
   --set e_bracket "${bracket_props[@]}"
 
 sketchybar --add bracket right_bracket \
