@@ -169,12 +169,8 @@ cask "bitwarden"
 cask "theboredteam/boring-notch/boring-notch"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Terminal-based AI coding assistant
-cask "claude-code"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Voice and text chat software
 cask "discord"
 cask "font-sketchybar-app-font"
