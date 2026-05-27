@@ -64,10 +64,11 @@ sketchybar --add event cpu_temp_update
 items=(
   # left
   apple
-  front_app
   stopwatch
   mode
   aerospace_workspace
+  front_app_pointer
+  front_app
   spacer_left
   input_source
   audio_input
@@ -114,8 +115,8 @@ bracket_props=(
 )
 
 sketchybar --add bracket left_bracket \
-  apple front_app stopwatch aerospace_mode \
-  workspace.prev workspace.focused \
+  apple stopwatch aerospace_mode \
+  workspace.prev workspace.focused front_app_pointer front_app \
   --set left_bracket "${bracket_props[@]}"
 
 sketchybar --add bracket spacer_left_bracket \
