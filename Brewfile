@@ -155,6 +155,8 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 # Simple hotkey-daemon for macOS.
 brew "asmvik/formulae/skhd"
+# A window border system for macOS
+brew "felixkratz/formulae/borders"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.

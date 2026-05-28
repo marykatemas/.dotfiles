@@ -12,6 +12,8 @@ after-startup-command = [
   '''exec-and-forget /bin/bash -lc "killall sketchybar >/dev/null 2>&1; sketchybar >/dev/null 2>&1 &"''',
   # Restart skhd on AeroSpace startup.
   '''exec-and-forget /bin/bash -lc "skhd --restart-service >/dev/null 2>&1 || skhd --start-service >/dev/null 2>&1"''',
+  # Restart borders on AeroSpace startup.
+  '''exec-and-forget /bin/bash -lc "killall borders >/dev/null 2>&1; borders >/dev/null 2>&1 &"''',
 ]
 
 # Notify SketchyBar about workspace change
