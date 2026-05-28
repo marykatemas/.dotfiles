@@ -4,4 +4,5 @@ shift + ctrl + alt + cmd - c : ~/.config/sketchybar/plugins/caffeinate/click.sh
 shift + ctrl + alt + cmd - i : ~/.config/sketchybar/plugins/audio_input/click.sh
 shift + ctrl + alt + cmd - o : ~/.config/sketchybar/plugins/audio_output/click.sh
 shift + ctrl + alt + cmd - b : ~/.config/sketchybar/plugins/brew_outdated/click.sh
+shift + ctrl + alt + cmd - z : ~/.config/sketchybar/plugins/zen/click.sh
 shift + ctrl + alt + cmd - f : aerospace macos-native-fullscreen

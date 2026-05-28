@@ -64,7 +64,7 @@ sketchybar --add event cpu_temp_update
 items=(
   # left
   apple
-  mode
+  aerospace_mode
   aerospace_workspace
   front_app_pointer
   front_app
@@ -79,6 +79,7 @@ items=(
   geo_flag
   # center
   external_monitor
+  zen
   # notch right (e)
   external_monitor_gap_right
   time
@@ -128,7 +129,7 @@ sketchybar --add bracket q_bracket \
   --set q_bracket "${bracket_props[@]}"
 
 sketchybar --add bracket center_bracket \
-  external_monitor \
+  external_monitor zen \
   --set center_bracket "${bracket_props[@]}"
 
 sketchybar --add bracket e_bracket \
@@ -145,5 +146,8 @@ sketchybar --add bracket spacer_right_bracket \
   brew_outdated caffeinate \
   --set spacer_right_bracket "${bracket_props[@]}"
 
-# sketchybar --hotload on
+# restore zen mode state on restart
+bash "$PLUGIN_DIR/zen/plugin.sh" 2>/dev/null
+
+sketchybar --hotload off
 sketchybar --update
