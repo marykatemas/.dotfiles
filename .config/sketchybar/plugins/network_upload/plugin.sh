@@ -38,11 +38,11 @@ rate_value="${NETWORK_UPLOAD:-$(first_env_value "NETWORK_UPLOAD_")}"
 
 bytes_per_second="$(rate_to_bytes_per_second "$rate_value")"
 
-if [ "$bytes_per_second" -ge $((12 * 1024 * 1024)) ]; then
+if [ "$bytes_per_second" -ge $((32000 * 1024)) ]; then
   color="$HIGH"
-elif [ "$bytes_per_second" -ge $((6 * 1024 * 1024)) ]; then
+elif [ "$bytes_per_second" -ge $((16000 * 1024)) ]; then
   color="$MEDIUM"
-elif [ "$bytes_per_second" -ge $((3 * 1024 * 1024)) ]; then
+elif [ "$bytes_per_second" -ge $((8000 * 1024)) ]; then
   color="$LOW"
 else
   color="$BASE"

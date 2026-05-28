@@ -14,9 +14,9 @@
 ![asset](assets/asset_sketchybar.png)
 
 ![asset](assets/asset_sketchybar_zen.png)
-<kbd>⌃⌥⌘⇧ + Z</kbd> — toggle zen mode.
+<kbd>⌃⌥⌘⇧ + Z</kbd> — toggle zen mode (via skhd).
 
-Config: `~/.config/sketchybar/sketchybarrc`
+Config: `~/.config/sketchybar/`
 
 ## Requirements
 

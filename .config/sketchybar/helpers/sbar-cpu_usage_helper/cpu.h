@@ -9,9 +9,9 @@ static const char TOPPROC[] = { "/bin/ps -Aceo pid=,pcpu=,comm= -r" };
 static const char APPLE_PROCESS_PREFIX[] = { "com.apple." };
 
 static inline const char* cpu_color_for_usage(double total_perc) {
-  if (total_perc >= .8) return getenv("HIGH");
-  if (total_perc >= .55) return getenv("MEDIUM");
-  if (total_perc >= .3) return getenv("LOW");
+  if (total_perc >= .85) return getenv("HIGH");
+  if (total_perc >= .6) return getenv("MEDIUM");
+  if (total_perc >= .35) return getenv("LOW");
   return getenv("BASE");
 }
 

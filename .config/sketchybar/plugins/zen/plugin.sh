@@ -9,7 +9,7 @@ ZEN_WHITELIST=(
   'front_app'
 )
 
-ZEN_STATE_FILE="$STATE_DIR/zen.lock"
+ZEN_STATE_FILE="$STATE_DIR/zen.state"
 
 read_zen_state() {
   if [ -f "$ZEN_STATE_FILE" ]; then

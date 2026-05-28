@@ -3,7 +3,7 @@
 source "$HOME/.config/sketchybar/sourcefile.sh"
 
 latency=(
-  update_freq=90
+  update_freq=300
   label.font="SF Pro:Black:9.0"
   y_offset=-10
   icon.drawing=off

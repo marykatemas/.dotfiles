@@ -10,11 +10,11 @@ fi
 
 latency_ms="$(awk -v seconds="$latency_seconds" 'BEGIN { printf "%d", (seconds * 1000) + 0.5 }')"
 
-if [ "$latency_ms" -ge 200 ]; then
+if [ "$latency_ms" -ge 300 ]; then
   color="$HIGH"
-elif [ "$latency_ms" -ge 100 ]; then
+elif [ "$latency_ms" -ge 150 ]; then
   color="$MEDIUM"
-elif [ "$latency_ms" -ge 50 ]; then
+elif [ "$latency_ms" -ge 75 ]; then
   color="$LOW"
 else
   color="$BASE"

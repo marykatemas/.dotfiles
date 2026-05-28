@@ -3,7 +3,7 @@
 source "$HOME/.config/sketchybar/sourcefile.sh"
 
 db_path="$HOME/Library/Group Containers/group.com.apple.usernoted/db2/db"
-cutoff_file="$STATE_DIR/notifications_cutoff"
+cutoff_file="$STATE_DIR/notifications_cutoff.state"
 dialog_lock_dir="$STATE_DIR/notifications_dialog.lock"
 dialog_pid_file="$dialog_lock_dir/pid"
 

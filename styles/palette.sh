@@ -18,6 +18,8 @@ export marykate_color3_50=0x80707B90
 
 # red
 export marykate_color4=0xFFEF5A5A
+# red 20% opacity
+export marykate_color4_20=0x33EF5A5A
 # orange
 export marykate_color5=0xFFF29F5C
 # yellow
@@ -28,5 +30,7 @@ export marykate_color7=0xFF8F5432
 export marykate_color8=0xFF5FCF8B
 # blue
 export marykate_color9=0xFF5CA9F2
+# blue 20% opacity
+export marykate_color9_20=0x335CA9F2
 # purple
 export marykate_color10=0xFF9B7AF2

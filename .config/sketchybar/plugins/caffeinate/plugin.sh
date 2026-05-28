@@ -3,7 +3,7 @@
 source "$HOME/.config/sketchybar/sourcefile.sh"
 
 item_name="${NAME:-caffeinate}"
-state_file="$STATE_DIR/caffeinate.lock"
+state_file="$STATE_DIR/caffeinate.pid"
 active_icon="􂊭"
 inactive_icon=""
 
