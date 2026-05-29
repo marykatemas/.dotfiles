@@ -11,9 +11,12 @@
 
 # sketchybar
 
-![asset](assets/asset_sketchybar.png)
+> [!NOTE]
+> SketchyBar config from .dotfiles repo.
 
-![asset](assets/asset_sketchybar_zen.png)
+![asset](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar.png)
+
+![asset](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar_zen.png)
 <kbd>⌃⌥⌘⇧ + Z</kbd> — toggle zen mode (via skhd).
 
 Config: `~/.config/sketchybar/`

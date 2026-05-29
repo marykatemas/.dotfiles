@@ -1,7 +1,0 @@
-[package]
-name = "sbar-cpu_temp_helper"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-sysinfo = { version = "0.38.4", default-features = false, features = ["component"] }

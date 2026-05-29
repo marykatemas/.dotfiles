@@ -1,0 +1,3 @@
+[submodule ".config/sketchybar"]
+	path = .config/sketchybar
+	url = git@github.com:marykatemas/sketchybar-config.git
