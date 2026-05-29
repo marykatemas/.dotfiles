@@ -104,3 +104,4 @@ alias lgit='lazygit'
 alias ldocker="lazydocker"
 alias ghd='gh dash'
 alias oc='opencode'
+alias gssu='git submodule sync --recursive && git submodule update --init --recursive'
