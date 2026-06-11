@@ -1,0 +1,6 @@
+[flavor]
+# dark = "rose-pine"
+dark = "kanagawa"
+
+[app]
+overall = { bg = "reset" }

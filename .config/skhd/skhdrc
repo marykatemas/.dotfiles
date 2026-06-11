@@ -1,0 +1,11 @@
+# sketchybar
+shift + ctrl + alt + cmd - n : ~/.config/sketchybar/plugins/notifications/click.sh # n like notifications
+shift + ctrl + alt + cmd - s : ~/.config/sketchybar/plugins/stopwatch/click.sh # s like stopwatch
+shift + ctrl + alt + cmd - c : ~/.config/sketchybar/plugins/caffeinate/click.sh # c like caffeinate
+shift + ctrl + alt + cmd - i : ~/.config/sketchybar/plugins/audio_input/click.sh # i like input (audio)
+shift + ctrl + alt + cmd - o : ~/.config/sketchybar/plugins/audio_output/click.sh # o like output (audio)
+shift + ctrl + alt + cmd - a : ~/.config/sketchybar/plugins/cpu_load/click.sh # a like activity monitor
+shift + ctrl + alt + cmd - z : ~/.config/sketchybar/plugins/zen/click.sh # z like zen
+
+# aerospace
+shift + ctrl + alt + cmd - f : aerospace macos-native-fullscreen # f like fullscreen
