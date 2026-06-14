@@ -4,11 +4,6 @@ rev = "598cdb6"
 hash = "7b625412411be411153886894d9acaf"
 
 [[flavor.deps]]
-use = "Mintass/rose-pine"
-rev = "d91f8f2"
-hash = "87da3630653b6d272e43658418599188"
-
-[[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"
 hash = "c69a63981e254a3a06a11c2bf0e6af1d"

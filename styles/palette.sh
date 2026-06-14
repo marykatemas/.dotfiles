@@ -6,10 +6,10 @@
 export marykate_color1=0xFFDCD7BA
 # peach red
 export marykate_color2=0xFFFF5D62
-# katana gray
-export marykate_color3=0xFF717C7C
-# katana gray — 50%
-export marykate_color3_50=0x80717C7C
+# fuji gray
+export marykate_color3=0xFF727169
+# fuji gray 50%
+export marykate_color3_50=0x80727169
 # samurai red
 export marykate_color4=0xFFE82424
 # ronin yellow

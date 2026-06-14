@@ -1,9 +1,8 @@
 local theme = "kanagawa"
-local variant = ""
+local variant = "wave"
 local colorscheme = variant ~= "" and (theme .. "-" .. variant) or theme
 
 return {
-  -- { "rose-pine/neovim", name = "rose-pine", lazy = true },
   { "rebelot/kanagawa.nvim", name = "kanagawa", lazy = true },
   {
     "zenbones-theme/zenbones.nvim",

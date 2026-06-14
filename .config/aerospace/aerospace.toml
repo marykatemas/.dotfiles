@@ -82,11 +82,11 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 6
-inner.vertical = 6
+inner.horizontal = 8
+inner.vertical = 8
 outer.left = 6
 outer.right = 6
-outer.bottom = 6
+outer.bottom = 4
 outer.top = [
   { monitor."^Built-in.*$" = 8 },
   45,

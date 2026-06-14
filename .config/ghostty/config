@@ -3,7 +3,11 @@ background-opacity = 0.75
 background-blur-radius = 13
 window-padding-x = 10
 window-padding-y = 8
-theme = Zenbones Dark
+
+# og themes for customization
+# /Applications/Ghostty.app/Contents/Resources/ghostty/themes
+theme = kanagawa-wave-black-bg.conf
+
 font-size = 15
 font-thicken = true
 mouse-hide-while-typing = true

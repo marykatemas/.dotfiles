@@ -11,11 +11,12 @@
 
 # sketchybar
 
->git submodule from [.dotfiles](https://github.com/marykatemas/.dotfiles)
+>git submodule from [.dotfiles](https://github.com/marykatemas/.dotfiles) repo
 
 ![sketchybar](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar.png)
 ![sketchybar_zen](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar_zen.png)
 <kbd>⌃⌥⌘⇧ Z</kbd> — zen mode (via skhd).
+
 Besides zen mode, skhd runs other scripts too — check `~/.config/skhd/skhdrc`.
 
 Config: `~/.config/sketchybar/`

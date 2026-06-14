@@ -6,7 +6,7 @@ tap "theboredteam/boring-notch"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
-brew "atuin"
+brew "atuin", restart_service: :changed
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -87,6 +87,8 @@ brew "mtr"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Retrieves currently playing media, and simulates media actions
+brew "nowplaying-cli"
 # Modern shell for the GitHub era
 brew "nushell"
 # Create, run, and share large language models (LLMs)

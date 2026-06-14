@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source ~/.dotfiles/styles/palette.sh
 
 options=(
@@ -9,8 +7,7 @@ options=(
 	width=2.0
 	hidpi=on
 	active_color=$marykate_color1
-	# active_color="gradient(top_left=$marykate_color9,bottom_right=$marykate_color4)"
-	# inactive_color=$marykate_color3_50
+	inactive_color=$marykate_color3
 )
 
 borders "${options[@]}"
