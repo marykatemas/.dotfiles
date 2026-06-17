@@ -44,7 +44,10 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focused-monitor-changed = [
+  'move-mouse monitor-lazy-center',
+  '''exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED="$(aerospace list-workspaces --focused)"''',
+]
 
 # Mouse follows focus when focused window changes
 on-focus-changed = ['move-mouse window-lazy-center']
