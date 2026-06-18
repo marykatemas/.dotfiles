@@ -8,5 +8,12 @@
   "trustedcasks": [
     "nikitabobko/tap/aerospace",
     "theboredteam/boring-notch/boring-notch"
+  ],
+  "trustedtaps": [
+    "asmvik/formulae",
+    "felixkratz/formulae",
+    "nikitabobko/tap",
+    "oven-sh/bun",
+    "theboredteam/boring-notch"
   ]
 }
