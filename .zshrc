@@ -95,9 +95,9 @@ alias ......="cd ../../../../.."
 
 alias mkm='cd $HOME/MARYKATEMAS'
 
-alias brewup='brew update && brew upgrade --greedy && sketchybar --trigger system_woke && mas outdated && mas upgrade && brew doctor'
+alias brewup='brew update && brew upgrade && sketchybar --trigger system_woke && mas outdated && mas upgrade && brew doctor'
 alias brewcl='brew cleanup --prune=all -s && brew autoremove && brew doctor'
-alias brewfile='brew bundle dump --file="$HOME/.dotfiles/Brewfile" --force --describe'
+alias brewfile='brew bundle dump --file="$HOME/.dotfiles/Brewfile" --force'
 
 alias v='nvim'
 
@@ -111,8 +111,8 @@ alias lt='eza --tree --icons -l'
 alias lta='eza --tree --icons -la'
 alias ltai='eza --tree --icons -lai'
 
-alias lgit='lazygit'
-alias ldocker="lazydocker"
+alias lzg='lazygit'
+alias lzd="lazydocker"
 alias ghd='gh dash'
 alias oc='opencode'
 

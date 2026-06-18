@@ -35,7 +35,7 @@ if [[ -n "$_file" && -f "$_file" ]]; then
 					;;
 				background\ =\ *) printf 'export marykate_bg=%s\n' "$(_hex "${_l#background = }")" ;;
 				foreground\ =\ *) printf 'export marykate_fg=%s\n' "$(_hex "${_l#foreground = }")" ;;
-				cursor-color\ =\ *) printf 'export marykate_cursor=%s\n' "$(_hex "${_l#cursor-color = }")" ;;
+				cursor-color\ =\ *) printf 'export marykate_cursor_color=%s\n' "$(_hex "${_l#cursor-color = }")" ;;
 				cursor-text\ =\ *) printf 'export marykate_cursor_text=%s\n' "$(_hex "${_l#cursor-text = }")" ;;
 				selection-background\ =\ *) printf 'export marykate_selection_bg=%s\n' "$(_hex "${_l#selection-background = }")" ;;
 				selection-foreground\ =\ *) printf 'export marykate_selection_fg=%s\n' "$(_hex "${_l#selection-foreground = }")" ;;

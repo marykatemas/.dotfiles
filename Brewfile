@@ -1,8 +1,8 @@
-tap "asmvik/formulae"
-tap "felixkratz/formulae"
-tap "nikitabobko/tap"
-tap "oven-sh/bun"
-tap "theboredteam/boring-notch"
+tap "asmvik/formulae", trusted: true
+tap "felixkratz/formulae", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "oven-sh/bun", trusted: true
+tap "theboredteam/boring-notch", trusted: true
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -188,6 +188,8 @@ cask "ghostty"
 cask "keycastr"
 # Use Vim in input fields and non input fields
 cask "kindavim"
+# Controls and monitors all fans on Apple computers
+cask "macs-fan-control"
 # Desktop sync client for Nextcloud software products
 cask "nextcloud"
 # Official Nextcloud Talk Desktop client
