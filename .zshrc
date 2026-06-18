@@ -82,6 +82,11 @@ bindkey jk vi-cmd-mode
 bindkey '^e' autosuggest-accept
 # bindkey '' autosuggest-execute
 
+# open man pages in nvim
+man() {
+    nvim +"Man $*" +only
+}
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
