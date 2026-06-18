@@ -7,3 +7,8 @@ hash = "7b625412411be411153886894d9acaf"
 use = "dangooddd/kanagawa"
 rev = "04985d1"
 hash = "c69a63981e254a3a06a11c2bf0e6af1d"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "8e6296f"
+hash = "d9da921c3bd37ba32ee27a8a7a40461f"
