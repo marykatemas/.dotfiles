@@ -6,8 +6,8 @@ options=(
 	style=round
 	width=2.0
 	hidpi=on
-	active_color=$marykate_color1
-	inactive_color=$marykate_color3
+	active_color="${marykate_color15}"
+	inactive_color="${marykate_color8}"
 )
 
 borders "${options[@]}"

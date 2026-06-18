@@ -14,30 +14,19 @@
 >git submodule from [.dotfiles](https://github.com/marykatemas/.dotfiles) repo
 
 ![sketchybar](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar.png)
+
 ![sketchybar_zen](https://raw.githubusercontent.com/marykatemas/.dotfiles/master/assets/asset_sketchybar_zen.png)
 <kbd>⌃⌥⌘⇧ Z</kbd> — zen mode (via skhd).
 
-Besides zen mode, skhd runs other scripts too — check `~/.config/skhd/skhdrc`.
+More skhd SketchyBar shortcuts — `~/.config/skhd/skhdrc`.
 
 Config: `~/.config/sketchybar/`
 
-External palette: `~/.dotfiles/styles/palette.sh` (sourced in `colors.sh`).
+External palette: `~/.dotfiles/styles/palette.sh` — reads active theme, sourced in `colors.sh`.
 
-```
-├── sketchybarrc       # entry point
-├── sourcefile.sh      # shared source for everything
-├── colors.sh / icons.sh / paths.sh
-├── assets/
-├── items/*.sh         # item definitions
-├── plugins/*/         # plugin.sh, click.sh, watcher.sh
-└── helpers/
-    ├── rainbow.py                # rainbow bracket PNGs
-    └── event_providers/          # C helpers (FelixKratz)
-        ├── cpu_load/
-        └── network_load/
-```
+>все, дальше сам сам сам сам сам
 
-### Reload & Rebuild helpers
+### Reload
 
 ```sh
 sketchybar --reload
