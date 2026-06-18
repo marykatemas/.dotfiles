@@ -14,9 +14,6 @@ README_FILES=(
 {
 	echo "# .dotfiles"
 	echo
-	echo "> [!WARNING]"
-	echo "> install.sh currently only for manual install."
-	echo
 	echo "![asset](assets/asset.png)"
 	echo
 	echo

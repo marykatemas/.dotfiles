@@ -49,7 +49,7 @@ eval "$(starship init zsh)"
 
 # orbstack cli integration
 if [ -f "$HOME/.orbstack/shell/init.zsh" ]; then
-  source "$HOME/.orbstack/shell/init.zsh"
+	source "$HOME/.orbstack/shell/init.zsh"
 fi
 
 # zsh-autosuggestions
@@ -61,9 +61,9 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # aliases
 stty susp undef
 zi-widget() {
-  zle -I
-  zi
-  zle reset-prompt
+	zle -I
+	zi
+	zle reset-prompt
 }
 zle -N zi-widget
 bindkey '^z' zi-widget
@@ -71,7 +71,7 @@ bindkey '^z' zi-widget
 function yazi() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
+	IFS= read -r -d '' cwd <"$tmp"
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
@@ -84,7 +84,7 @@ bindkey '^e' autosuggest-accept
 
 # open man pages in nvim
 man() {
-    nvim +"Man $*" +only
+	nvim +"Man $*" +only
 }
 
 alias ..="cd .."

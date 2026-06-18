@@ -1,8 +1,5 @@
 # .dotfiles
 
-> [!WARNING]
-> install.sh currently only for manual install.
-
 ![asset](assets/asset.png)
 
 
