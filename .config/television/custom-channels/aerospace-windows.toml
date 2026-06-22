@@ -9,7 +9,7 @@ command = '''aerospace list-windows --all \
   | sort -t$'\t' -k2,2n -k3,3 \
   | awk -F'\t' '$3 != "AeroSpace" {printf "%s\t[%s] %s | %s\n", $1, $2, $3, $4}'
 '''
-no_sort = true
+frecency = false
 display = "{split:\\t:1}"
 output = "{split:\\t:0}"
 
