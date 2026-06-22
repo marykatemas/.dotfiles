@@ -141,6 +141,8 @@ brew "vim"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# CLI for Git worktree management, designed for parallel AI agent workflows
+brew "worktrunk"
 # Friendly and fast tool for sending HTTP requests
 brew "xh"
 # Blazing fast terminal file manager written in Rust, based on async I/O
