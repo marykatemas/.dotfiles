@@ -1,0 +1,30 @@
+[metadata]
+name = "tmux-ssh"
+description = "List and connect to tmux ssh windows"
+requirements = ["tmux"]
+
+[source]
+command = "tmux list-windows -a -f '#{==:#{window_name},ssh}' -F '#{session_name}:#{window_index}\t#{window_name}\t#{pane_current_command}'"
+frecency = false
+display = "{split:\t:0} - {split:\t:2}"
+output = "{split:\t:0}"
+
+[preview]
+command = "tmux capture-pane -e -t '{split:\t:0}' -p 2>/dev/null"
+
+[ui.preview_panel]
+size = 70
+
+[keybindings]
+enter = "actions:select"
+ctrl-d = ["actions:kill", "reload_source"]
+
+[actions.select]
+description = "Switch to the selected SSH window"
+command = "tmux switch-client -t '{split:\t:0}'"
+mode = "execute"
+
+[actions.kill]
+description = "Kill the selected SSH window"
+command = "tmux kill-window -t '{split:\t:0}'"
+mode = "fork"
