@@ -6,7 +6,7 @@ window-padding-y = 8
 
 # og themes for customization
 # /Applications/Ghostty.app/Contents/Resources/ghostty/themes
-theme = tokyonight-black-bg.conf
+theme = kanagawa-wave-black-bg.conf
 
 font-size = 15
 font-thicken = true
