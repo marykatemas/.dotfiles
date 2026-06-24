@@ -31,6 +31,8 @@ brew "diffnav"
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
+# Command-line DNS Client for Humans
+brew "doggo"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # More intuitive version of du in rust
@@ -111,6 +113,8 @@ brew "pre-commit"
 brew "procs"
 # SVG rendering tool and library
 brew "resvg"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Smart session manager for the terminal
 brew "sesh"
 # Static analysis and lint tool, for (ba)sh scripts

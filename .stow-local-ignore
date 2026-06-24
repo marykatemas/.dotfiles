@@ -30,3 +30,5 @@ _darcs
 ^update_readme\.sh$
 ^assets$
 ^styles$
+^\.pre-commit-config\.yaml$
+^AGENTS\.md$

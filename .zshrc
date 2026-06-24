@@ -119,11 +119,17 @@ alias lzd="lazydocker"
 alias ghd='gh dash'
 alias oc='opencode'
 
+# DANGER
+alias gre='git reflog expire --expire=now --all'
+alias gmr='git maintenance run --auto'
+alias ggc='git gc --aggressive --prune=now'
+
 alias gssu='git submodule sync --recursive && git submodule update --init --recursive'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias gdiff='git diff'
-alias ga='git add -p'
-alias gadd='git add'
+alias gap='git add -p'
+alias ga='git add'
 alias gc='git commit -m'
-alias gca='git commit -a -m'
 alias gpush='git push -u origin HEAD'
+
+alias bckp='$HOME/backup.sh'
