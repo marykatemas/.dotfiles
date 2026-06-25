@@ -19,10 +19,12 @@ sudo killall -HUP mDNSResponder
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 2
 defaults write -g ApplePressAndHoldEnabled -bool false
-
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write -g com.apple.swipescrolldirection -bool false
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write -g com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.universalaccess mouseDriverCursorSize -float 2.5
+defaults write -g com.apple.mouse.linear -bool true
+defaults write -g com.apple.mouse.scaling -float 2.5
 
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # gh extension install dlvhdr/gh-dash

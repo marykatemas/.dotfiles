@@ -1,15 +1,7 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
 add_newline = false
 
 format = """$directory$character"""
 right_format = """$all"""
 
-[character]
-success_symbol = '[➜](bold green)'
-
 [git_branch]
 format = '[$symbol$branch (:$remote_branch)]($style)'
-
-[package]
-disabled = true

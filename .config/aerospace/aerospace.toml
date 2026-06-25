@@ -89,7 +89,7 @@ inner.horizontal = 8
 inner.vertical = 8
 outer.left = 6
 outer.right = 6
-outer.bottom = 4
+outer.bottom = 8
 outer.top = [
   { monitor."^Built-in.*$" = 8 },
   45,

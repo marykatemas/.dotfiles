@@ -1,5 +1,5 @@
-local theme = "kanagawa"
-local variant = "wave"
+local theme = "tokyonight"
+local variant = ""
 local colorscheme = variant ~= "" and (theme .. "-" .. variant) or theme
 
 return {

@@ -175,6 +175,10 @@ brew "felixkratz/formulae/sketchybar", trusted: true
 brew "oven-sh/bun/bun", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace", trusted: true
+# VPN client
+cask "amneziavpn"
+# Replacement for the built-in Cmd+Tab app switcher
+cask "bettercmdtab"
 # Display management tool
 cask "betterdisplay"
 # Desktop password and login vault
@@ -187,6 +191,7 @@ cask "brave-browser"
 cask "coconutbattery"
 # Voice and text chat software
 cask "discord"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-satoshi"
 cask "font-sketchybar-app-font"
 cask "font-symbols-only-nerd-font"
