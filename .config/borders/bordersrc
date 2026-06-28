@@ -8,7 +8,7 @@ borders_opts=(
 	style=round
 	width=2.0
 	hidpi=on
-	active_color="$(_hex "$marykate_fg")"
+	active_color="$(_hex "$marykate_arch")"
 	inactive_color="$(_hex "$marykate_color8")"
 )
 
