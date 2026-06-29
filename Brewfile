@@ -192,8 +192,6 @@ cask "coconutbattery"
 # Voice and text chat software
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-satoshi"
-cask "font-sketchybar-app-font"
 cask "font-symbols-only-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"

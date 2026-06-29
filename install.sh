@@ -24,7 +24,7 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write -g com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.universalaccess mouseDriverCursorSize -float 2.5
 defaults write -g com.apple.mouse.linear -bool true
-defaults write -g com.apple.mouse.scaling -float 2.5
+defaults write -g com.apple.mouse.scaling -float 1
 
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # gh extension install dlvhdr/gh-dash

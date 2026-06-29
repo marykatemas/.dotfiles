@@ -1,7 +1,0 @@
-repos:
-  - repo: local
-    hooks:
-      - id: update-readme
-        name: update-readme
-        entry: bash update_readme.sh
-        language: system

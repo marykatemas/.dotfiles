@@ -47,6 +47,6 @@ if [[ -n "$_file" && -f "$_file" ]]; then
 	source "$_cache"
 fi
 
-export marykate_arch="#1793D1"
+export marykate_accent="#1793D1"
 
 unset _hex _cfg _user _builtin _cache _theme _file _cached

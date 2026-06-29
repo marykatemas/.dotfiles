@@ -27,8 +27,6 @@ _darcs
 ^brew\.sh$
 ^Brewfile$
 ^install\.sh$
-^update_readme\.sh$
 ^assets$
 ^styles$
-^\.pre-commit-config\.yaml$
 ^AGENTS\.md$
