@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/styles/palette.sh
+source ~/.dotfiles/styles/ghostty-styles.sh
 
 _hex() { printf '0xff%s\n' "${1:1}"; }
 
@@ -8,7 +8,7 @@ borders_opts=(
 	style=round
 	width=2.0
 	hidpi=on
-	active_color="$(_hex "$marykate_accent")"
+	active_color="$(_hex "$marykate_fg")"
 	inactive_color="$(_hex "$marykate_color8")"
 )
 

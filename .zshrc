@@ -98,7 +98,7 @@ alias ......="cd ../../../../.."
 
 alias mkm='cd $HOME/MARYKATEMAS'
 
-alias brewup='brew update && brew upgrade && sketchybar --trigger system_woke && mas outdated && mas upgrade && brew doctor'
+alias brewup='brew update && brew upgrade && mas outdated && mas upgrade && brew doctor'
 alias brewcl='brew cleanup --prune=all -s && brew autoremove && brew doctor'
 alias brewfile='brew bundle dump --file="$HOME/.dotfiles/Brewfile" --force'
 

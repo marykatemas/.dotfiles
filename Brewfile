@@ -1,8 +1,9 @@
-tap "asmvik/formulae", trusted: true
-tap "felixkratz/formulae", trusted: true
-tap "nikitabobko/tap", trusted: true
-tap "oven-sh/bun", trusted: true
-tap "theboredteam/boring-notch", trusted: true
+tap "asmvik/formulae"
+tap "barutsrb/tap", "https://github.com/BarutSRB/homebrew-tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "nikitabobko/tap"
+tap "oven-sh/bun"
+tap "theboredteam/boring-notch"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -11,8 +12,6 @@ brew "atuin", restart_service: :changed
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Get/set bluetooth power and discoverable state
-brew "blueutil"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # XML-based font configuration API for X Windows
@@ -39,6 +38,8 @@ brew "duf"
 brew "dust"
 # Modern, maintained replacement for ls
 brew "eza"
+# Powerful, lightweight programming language
+brew "lua"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -62,7 +63,7 @@ brew "grafana"
 # Kubernetes package manager
 brew "helm"
 # Agent multiplexer that lives in your terminal
-brew "herdr"
+brew "herdr", restart_service: :changed
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in select formats
@@ -91,8 +92,6 @@ brew "mtr"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Retrieves currently playing media, and simulates media actions
-brew "nowplaying-cli"
 # Modern shell for the GitHub era
 brew "nushell"
 # Create, run, and share large language models (LLMs)
@@ -127,8 +126,6 @@ brew "smartmontools"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Change macOS audio source from the command-line
-brew "switchaudio-osx"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # General purpose fuzzy finder TUI
@@ -209,6 +206,8 @@ cask "nextcloud-talk"
 cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Tiling window manager for macOS with Niri-inspired column-based layout
+cask "barutsrb/tap/omniwm", trusted: true
 # Document editor
 cask "onlyoffice"
 # Replacement for Docker Desktop

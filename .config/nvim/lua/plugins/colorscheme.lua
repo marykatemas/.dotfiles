@@ -3,7 +3,7 @@ local variant = ""
 local colorscheme = variant ~= "" and (theme .. "-" .. variant) or theme
 
 return {
-  { "rebelot/kanagawa.nvim", name = "kanagawa", lazy = true },
+  { "folke/tokyonight.nvim", name = "tokyonight", lazy = true },
   -- { "", name = "", lazy = true },
   -- { "", name = "", lazy = true },
   -- { "", name = "", lazy = true },

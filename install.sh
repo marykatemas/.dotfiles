@@ -29,4 +29,4 @@ defaults write -g com.apple.mouse.scaling -float 1
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # gh extension install dlvhdr/gh-dash
 
-brew services start sketchybar borders atuin
+brew services start atuin herdr

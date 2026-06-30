@@ -5,7 +5,7 @@ _hex() { printf '#%s' "$(printf '%s' "$1" | tr -d ' #' | tr '[:upper:]' '[:lower
 _cfg="$HOME/.config/ghostty/config"
 _user="$HOME/.config/ghostty/themes"
 _builtin="/Applications/Ghostty.app/Contents/Resources/ghostty/themes"
-_cache="$HOME/.cache/marykatemas/palette.sh"
+_cache="$HOME/.cache/marykatemas/ghostty-styles.sh"
 
 _theme=$(sed -n 's/^theme[[:blank:]]*=[[:blank:]]*//p' "$_cfg" 2>/dev/null)
 _theme="${_theme#"${_theme%%[! ]*}"}"
@@ -22,7 +22,6 @@ if [[ -n "$_file" && -f "$_file" ]]; then
 		read -r _cached <"$_cache"
 		_cached="${_cached#\# }"
 	}
-
 	if [[ "$_cached" != "$_file" || "$_file" -nt "$_cache" ]]; then
 		mkdir -p "${_cache%/*}" 2>/dev/null
 		{
@@ -43,10 +42,7 @@ if [[ -n "$_file" && -f "$_file" ]]; then
 			done <"$_file"
 		} >"$_cache"
 	fi
-
 	source "$_cache"
 fi
-
-export marykate_accent="#1793D1"
 
 unset _hex _cfg _user _builtin _cache _theme _file _cached

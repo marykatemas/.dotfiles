@@ -1,12 +1,1 @@
-# macOS
 .DS_Store
-
-# linux
-*~
-
-# IDE
-.idea/
-.vscode/
-
-# other
-*.swp
