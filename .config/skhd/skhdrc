@@ -1,0 +1,11 @@
+shift + ctrl + alt + cmd - m : ~/.config/skhd/scripts/toggle_audio_input.sh
+shift + ctrl + alt + cmd - v : ~/.config/skhd/scripts/toggle_audio_output.sh
+
+shift + ctrl + alt + cmd - g : ~/.config/skhd/scripts/launch.sh Ghostty
+shift + ctrl + alt + cmd - s : ~/.config/skhd/scripts/launch.sh Safari
+shift + ctrl + alt + cmd - b : ~/.config/skhd/scripts/launch.sh "Brave Browser"
+shift + ctrl + alt + cmd - t : ~/.config/skhd/scripts/launch.sh Telegram
+shift + ctrl + alt + cmd - o : ~/.config/skhd/scripts/launch.sh Obsidian
+shift + ctrl + alt + cmd - a : ~/.config/skhd/scripts/launch.sh "Activity Monitor"
+shift + ctrl + alt + cmd - d : ~/.config/skhd/scripts/launch.sh Discord
+shift + ctrl + alt + cmd - c : ~/.config/skhd/scripts/launch.sh Clock

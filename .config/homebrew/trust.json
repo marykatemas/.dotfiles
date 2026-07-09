@@ -1,0 +1,15 @@
+{
+  "trustedformulae": [
+    "asmvik/formulae/skhd",
+    "felixkratz/formulae/borders",
+    "felixkratz/formulae/sketchybar",
+    "hashicorp/tap/terraform",
+    "modem-dev/tap/hunk",
+    "oven-sh/bun/bun"
+  ],
+  "trustedcasks": [
+    "barutsrb/tap/omniwm",
+    "nikitabobko/tap/aerospace",
+    "theboredteam/boring-notch/boring-notch"
+  ]
+}

@@ -1,0 +1,16 @@
+macos-titlebar-style = hidden
+background-opacity = 0.75
+background-blur-radius = 25
+window-padding-x = 8
+window-padding-y = 8
+
+# og themes for customization
+# /Applications/Ghostty.app/Contents/Resources/ghostty/themes
+theme = oxocarbon-black-bg.conf
+font-family = JetBrainsMono NF
+font-size = 15
+font-thicken = true
+mouse-hide-while-typing = true
+
+custom-shader = ~/.config/ghostty/shaders/cursor_warp.glsl
+custom-shader = ~/.config/ghostty/shaders/space.glsl
