@@ -82,24 +82,20 @@ $env.config.completions.algorithm = "fuzzy"
 $env.config.history.file_format = "sqlite"
 $env.config.history.max_size = 5_000_000
 
-$env.config.keybindings ++= [
-  {
-    name: *
-    modifier: control
-    keycode: char_z
-    mode: [emacs vi_normal vi_insert]
-    event: { send: executehostcommand cmd: "zi" }
-  }
-  {
-    name: *
-    modifier: control
-    keycode: char_y
-    mode: [emacs vi_normal vi_insert]
-    event: { send: executehostcommand cmd: "yazi" }
-  }
-]
+# $env.config.keybindings ++= [
+#   {
+#     name: insert_last_token
+#     modifier: alt
+#     keycode: char_.
+#     mode: [emacs vi_normal vi_insert]
+#     event: [
+#       { edit: InsertString, value: "!$" }
+#       { send: Enter }
+#     ]
+#   }
+# ]
 
-def --env yazi [...args] {
+def --env y [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 	^yazi ...$args --cwd-file $tmp
 	let cwd = (open $tmp)
@@ -126,6 +122,7 @@ alias ghd = gh dash
 alias brewfile = brew bundle dump --force --file=~/.config/homebrew/Brewfile
 alias brew-up-formula = brew upgrade --formula
 alias brew-up-cask = brew upgrade --cask
+def mas-up [] { mas outdated; mas update }
 def brewc [] { brew cleanup --prune=all; brew autoremove; brew doctor }
 
 # https://github.com/nushell/awesome-nu
@@ -133,13 +130,13 @@ def brewc [] { brew cleanup --prune=all; brew autoremove; brew doctor }
 # И ТАК ДАЛЕЕ
 
 # https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases.nu
-source aliases/kubectl-aliases.nu
+source modules/kubectl-aliases.nu
 
 # https://github.com/KamilKleina/git-aliases.nu/blob/main/git-aliases.nu
-overlay use aliases/git-aliases.nu
+overlay use modules/git-aliases.nu
 
 # https://github.com/nushell/nu_scripts/blob/main/aliases/docker/docker-aliases.nu
-use aliases/docker-aliases.nu
+use modules/docker-aliases.nu
 
 # https://github.com/nushell/nu_scripts/blob/main/aliases/eza/eza-aliases.nu
-use aliases/eza-aliases.nu
+use modules/eza-aliases.nu
