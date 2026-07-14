@@ -44,10 +44,12 @@ $env.XDG_DATA_DIRS   = "/usr/local/share:/usr/share"
 $env.SHELL = (which nu | get path)
 
 use std "path add"
-path add "/opt/homebrew/bin"
 path add "/opt/homebrew/sbin"
-path add ($env.HOME | path join "bin")
+path add "/opt/homebrew/bin"
 path add ($env.HOME | path join ".local" "bin")
+path add "/nix/var/nix/profiles/default/bin"
+path add "/run/current-system/sw/bin"
+path add ("/etc/profiles/per-user" | path join (whoami) "bin")
 
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
