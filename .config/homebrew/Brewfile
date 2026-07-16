@@ -11,7 +11,7 @@ brew "age"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
-brew "atuin", restart_service: :changed
+brew "atuin"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -65,13 +65,15 @@ brew "grafana"
 # Kubernetes package manager
 brew "helm"
 # Agent multiplexer that lives in your terminal
-brew "herdr", restart_service: :changed
+brew "herdr"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Tool that can switch between kubectl contexts easily and create aliases
@@ -245,3 +247,4 @@ mas "Hidden Bar", id: 1452453066
 mas "uBlock Origin Lite", id: 6745342698
 mas "Vimari", id: 1480933944
 npm "@earendil-works/pi-coding-agent"
+npm "@fission-ai/openspec"

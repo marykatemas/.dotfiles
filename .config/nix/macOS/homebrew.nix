@@ -8,7 +8,6 @@
     ];
 
     brews = [
-      "vim"
     ];
 
     casks = [
