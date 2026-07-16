@@ -5,3 +5,6 @@ add_newline = false
 
 [line_break]
 disabled = true
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
