@@ -54,30 +54,30 @@ path add ("/etc/profiles/per-user" | path join (whoami) "bin")
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 
-mkdir ($nu.data-dir | path join "autoload")
+mkdir ($nu.default-config-dir | path join "autoload")
 
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship" "starship.toml")
 if (which starship | is-not-empty) {
-    starship init nu | save -f ($nu.data-dir | path join "autoload" "starship.nu")
+    starship init nu | save -f ($nu.default-config-dir | path join "autoload" "starship.nu")
 }
 
 if (which zoxide | is-not-empty) {
-    zoxide init nushell --hook prompt | save -f ($nu.data-dir | path join "autoload" "zoxide.nu")
+    zoxide init nushell --hook prompt | save -f ($nu.default-config-dir | path join "autoload" "zoxide.nu")
 }
 
 if (which mise | is-not-empty) {
-    mise activate nu | save -f ($nu.data-dir | path join "autoload" "mise.nu")
+    mise activate nu | save -f ($nu.default-config-dir | path join "autoload" "mise.nu")
 }
 
 if (which atuin | is-not-empty) {
-    atuin init nu | save -f ($nu.data-dir | path join "autoload" "atuin.nu")
+    atuin init nu | save -f ($nu.default-config-dir | path join "autoload" "atuin.nu")
 }
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 if (which carapace | is-not-empty) {
-    carapace _carapace nushell | save -f ($nu.data-dir | path join "autoload" "carapace.nu")
+    carapace _carapace nushell | save -f ($nu.default-config-dir | path join "autoload" "carapace.nu")
 }
 
 if (which wt | is-not-empty) {
-    wt config shell init nu | save -f ($nu.data-dir | path join "autoload" "worktrunk.nu")
+    wt config shell init nu | save -f ($nu.default-config-dir | path join "autoload" "worktrunk.nu")
 }
