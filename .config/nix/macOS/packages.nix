@@ -4,6 +4,5 @@ let
 in
 {
   environment.systemPackages = sharedPkgs ++ (with pkgs; [
-    mas
   ]);
 }

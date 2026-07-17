@@ -1,19 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  brewfile = builtins.readFile ../../homebrew/Brewfile;
+in {
   homebrew = {
     enable = true;
     onActivation = {
     };
 
-    taps = [
-    ];
+    taps = [];
+    brews = [];
+    casks = [];
+    masApps = {};
 
-    brews = [
-    ];
-
-    casks = [
-    ];
-
-    masApps = {
-    };
+    extraConfig = brewfile;
   };
 }
