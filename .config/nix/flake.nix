@@ -15,27 +15,34 @@
     };
   };
 
-  outputs = { self, nix-darwin, home-manager, nixpkgs }@inputs: {
-    darwinConfigurations."marykatemas-macos" = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        ./macOS/darwin.nix
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.marykatemas = import ./macOS/home.nix;
-          };
-        }
-      ];
-    };
+  outputs =
+    {
+      self,
+      nix-darwin,
+      home-manager,
+      nixpkgs,
+    }@inputs:
+    {
+      darwinConfigurations."marykatemas-macos" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./macOS/darwin.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.marykatemas = import ./macOS/home.nix;
+            };
+          }
+        ];
+      };
 
-    homeConfigurations."marykatemas-linux" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."aarch64-linux";
-      modules = [
-        ./linux/home.nix
-      ];
+      homeConfigurations."marykatemas-linux" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        modules = [
+          ./linux/home.nix
+        ];
+      };
     };
-  };
 }

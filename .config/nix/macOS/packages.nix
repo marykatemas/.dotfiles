@@ -3,6 +3,8 @@ let
   sharedPkgs = import ../shared/packages.nix pkgs;
 in
 {
-  environment.systemPackages = sharedPkgs ++ (with pkgs; [
-  ]);
+  environment.systemPackages =
+    sharedPkgs
+    ++ (with pkgs; [
+    ]);
 }

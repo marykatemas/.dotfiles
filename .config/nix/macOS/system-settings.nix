@@ -10,8 +10,15 @@
     localHostName = "marykate-mac";
     computerName = "marykate macbook";
     hostName = "marykate.local";
-    knownNetworkServices = [ "Wi-Fi" "Ethernet Adaptor" "Thunderbolt Ethernet" ];
-    dns = [ "1.1.1.1" "1.0.0.1" ];
+    knownNetworkServices = [
+      "Wi-Fi"
+      "Ethernet Adaptor"
+      "Thunderbolt Ethernet"
+    ];
+    dns = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
   };
 
   system.defaults = {

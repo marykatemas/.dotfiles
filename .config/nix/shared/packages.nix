@@ -76,4 +76,5 @@ pkgs: with pkgs; [
   zsh
   zsh-autosuggestions
   zsh-syntax-highlighting
+  nixfmt
 ]
