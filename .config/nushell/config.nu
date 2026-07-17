@@ -124,6 +124,8 @@ alias brew-up-formula = brew upgrade --formula
 alias brew-up-cask = brew upgrade --cask
 def mas-up [] { mas outdated; mas update }
 def brewc [] { brew cleanup --prune=all; brew autoremove; brew doctor }
+def drs [] { sudo darwin-rebuild switch --flake ~/.config/nix/.#marykatemas-macos }
+def hms [] { home-manager switch --flake ~/.config/nix/.#marykatemas-linux }
 
 # https://github.com/nushell/awesome-nu
 # https://github.com/nushell/nu_scripts

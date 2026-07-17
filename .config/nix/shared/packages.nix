@@ -77,4 +77,6 @@ pkgs: with pkgs; [
   zsh-autosuggestions
   zsh-syntax-highlighting
   nixfmt
+  unzip
+  restic
 ]

@@ -12,6 +12,8 @@ brew "grafana"
 brew "mas"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
 # Simple hotkey-daemon for macOS.
@@ -92,3 +94,4 @@ mas "uBlock Origin Lite", id: 6745342698
 mas "Vimari", id: 1480933944
 npm "@earendil-works/pi-coding-agent"
 npm "@fission-ai/openspec"
+npm "corepack"

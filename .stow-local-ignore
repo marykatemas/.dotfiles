@@ -27,4 +27,4 @@ _darcs
 ^stow\.sh$
 ^assets$
 ^styles$
-^setup-macos\.sh$
+^INSTALL\.sh$
