@@ -1,7 +1,11 @@
 # version = "0.114.0"
 
 $env.PROMPT_COMMAND = {||
-    let dir = match (do -i { $env.PWD | path relative-to $nu.home-dir }) {
+    let dir = match (
+        do -i {
+            $env.PWD | path relative-to $nu.home-dir
+        }
+    ) {
         null => $env.PWD
         '' => '~'
         $relative_pwd => ([~ $relative_pwd] | path join)
@@ -15,6 +19,7 @@ $env.PROMPT_COMMAND = {||
 }
 
 $env.PROMPT_COMMAND_RIGHT = {||
+
     # create a right prompt in magenta with green separators and am/pm underlined
     let time_segment = ([
         (ansi reset)
@@ -23,22 +28,28 @@ $env.PROMPT_COMMAND_RIGHT = {||
     ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
-    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+    let last_exit_code = if $env.LAST_EXIT_CODE != 0 {
+        ([
         (ansi rb)
         ($env.LAST_EXIT_CODE)
     ] | str join)
     } else { "" }
 
-    ([$last_exit_code, (char space), $time_segment] | str join)
+    ([
+        $last_exit_code
+        (char space)
+        $time_segment
+    ] | str join)
 }
 
 # https://specifications.freedesktop.org/basedir/latest/
 $env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
-$env.XDG_DATA_HOME   = ($env.HOME | path join ".local" "share")
-$env.XDG_STATE_HOME  = ($env.HOME | path join ".local" "state")
-$env.XDG_CACHE_HOME  = ($env.HOME | path join ".cache")
+$env.XDG_DATA_HOME = ($env.HOME | path join ".local" "share")
+$env.XDG_STATE_HOME = ($env.HOME | path join ".local" "state")
+$env.XDG_CACHE_HOME = ($env.HOME | path join ".cache")
 $env.XDG_CONFIG_DIRS = "/etc/xdg"
-$env.XDG_DATA_DIRS   = "/usr/local/share:/usr/share"
+$env.XDG_DATA_DIRS = "/usr/local/share:/usr/share"
+
 # $env.XDG_RUNTIME_DIR = $"/run/user/(id -u)"
 
 $env.SHELL = (which nu | get path)

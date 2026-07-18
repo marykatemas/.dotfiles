@@ -33,5 +33,5 @@ export alias dxcit = docker container exec -it
 
 # Alias for `docker ps -q | xargs docker stop`
 export def dsta [] {
-    docker ps -q | xargs docker stop 
+    docker ps -q | xargs docker stop
 }

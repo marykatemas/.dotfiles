@@ -79,4 +79,5 @@ pkgs: with pkgs; [
   nixfmt
   unzip
   restic
+  nufmt
 ]

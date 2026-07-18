@@ -26,7 +26,14 @@ def git_main_branch [] {
         return
     }
     let $refs = ["heads", "remotes/origin", "remotes/upstream"]
-    let $branches = ["main", "trunk", "mainline", "default", "stable", "master"]
+    let $branches = [
+        "main"
+        "trunk"
+        "mainline"
+        "default"
+        "stable"
+        "master"
+    ]
     for $ref in $refs {
         for $branch in $branches {
             let $full_ref = $"refs/($ref)/($branch)"
@@ -39,7 +46,7 @@ def git_main_branch [] {
 }
 def git_current_branch [] {
     $env.GIT_OPTIONAL_LOCKS = 0
-    mut ref = (git symbolic-ref --quiet HEAD | complete)
+    mut ref = git symbolic-ref --quiet HEAD | complete
     if $ref.exit_code == 128 {
         return
     } else if $ref.exit_code != 0 {
@@ -235,7 +242,7 @@ export alias gsu = git submodule update
 export alias gsw = git switch
 export alias gswc = git switch --create
 export alias gswd = git switch (git symbolic-ref --short refs/remotes/origin/HEAD | sed 's|^origin/||' | str trim)
-export alias gswi = git switch (git branch --all | fzf --no-preview --height=50 --border | str trim)  # switch branch
+export alias gswi = git switch (git branch --all | fzf --no-preview --height=50 --border | str trim) # switch branch
 export alias gswm = git switch (git_main_branch)
 export alias gta = git tag --annotate
 export alias gtl = git tag --sort=-v:refname -n --list "${1}*"
@@ -250,17 +257,32 @@ export alias gwm = git worktree move
 export alias gwr = git worktree remove
 
 ### FUNCTIONS
-export def gpoat [] { git push origin --all; git push origin --tags }
-export def gpristine [] { git reset --hard; git clean --force -dfx }
-export def gsta [] { git stash push; git stash save }
-export def gstu [] { git stash push; git stash save --include-untracked }
-export def gwipe [] { git reset --hard; git clean --force -df }
+export def gpoat [] {
+    git push origin --all
+    git push origin --tags
+}
+export def gpristine [] {
+    git reset --hard
+    git clean --force -dfx
+}
+export def gsta [] {
+    git stash push
+    git stash save
+}
+export def gstu [] {
+    git stash push
+    git stash save --include-untracked
+}
+export def gwipe [] {
+    git reset --hard
+    git clean --force -df
+}
 # Merge default (origin) branch into current branch
-export def gmd [] { 
+export def gmd [] {
     if (is_git_repo) == false {
         return
     }
-    let default_branch = (git symbolic-ref --short refs/remotes/origin/HEAD | sed 's|^origin/||')
+    let default_branch = git symbolic-ref --short refs/remotes/origin/HEAD | sed 's|^origin/||'
     git fetch origin $default_branch
     git merge origin/($default_branch)
 }
@@ -372,16 +394,16 @@ export def gbg [] {
     }
     git branch -vv --format='%(refname:short)|%(objectname:short)|%(upstream:track)|%(contents:subject)'
     | lines
-    | where { |it| $it =~ "gone]" }
+    | where {|it| $it =~ "gone]" }
     | split column "|"
     | select column1 column2 column4
     | rename branch_name commit_hash commit_message
 }
 # Remove branches that do not exists on remote (force)
 export def gbgD [] {
-    gbg | get branch_name | each { |branch| git branch -D $branch }
+    gbg | get branch_name | each {|branch| git branch -D $branch }
 }
 # Remove branches that do not exists on remote
 export def gbgd [] {
-    gbg | get branch_name | each { |branch| git branch -d $branch }
+    gbg | get branch_name | each {|branch| git branch -d $branch }
 }

@@ -2,7 +2,7 @@
 
 $env.config.color_config = {
     separator: default
-    leading_trailing_space_bg: { attr: n }
+    leading_trailing_space_bg: {attr: n}
     header: green_bold
     empty: blue
     bool: light_cyan
@@ -25,12 +25,12 @@ $env.config.color_config = {
     record: default
     list: default
     closure: green_bold
-    glob:cyan_bold
+    glob: cyan_bold
     semver: cyan_bold
     semver-range: cyan_bold
     block: default
     hints: dark_gray
-    search_result: { bg: red fg: default }
+    search_result: {bg: red, fg: default}
     shape_binary: purple_bold
     shape_block: blue_bold
     shape_bool: light_cyan
@@ -52,7 +52,7 @@ $env.config.color_config = {
     shape_list: cyan_bold
     shape_literal: blue
     shape_match_pattern: green
-    shape_matching_brackets: { attr: u }
+    shape_matching_brackets: {attr: u}
     shape_nothing: light_cyan
     shape_operator: yellow
     shape_pipe: purple_bold
@@ -66,11 +66,7 @@ $env.config.color_config = {
     shape_variable: purple
     shape_vardecl: purple
     shape_raw_string: light_purple
-    shape_garbage: {
-        fg: default
-        bg: red
-        attr: b
-    }
+    shape_garbage: {fg: default, bg: red, attr: b}
 }
 
 $env.config.show_banner = false
@@ -96,13 +92,13 @@ $env.config.history.max_size = 5_000_000
 # ]
 
 def --env y [...args] {
-	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-	^yazi ...$args --cwd-file $tmp
-	let cwd = (open $tmp)
-	if $cwd != $env.PWD and ($cwd | path exists) {
-		cd $cwd
-	}
-	rm -fp $tmp
+    let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+    ^yazi ...$args --cwd-file $tmp
+    let cwd = (open $tmp)
+    if $cwd != $env.PWD and ($cwd | path exists) {
+        cd $cwd
+    }
+    rm -fp $tmp
 }
 
 def man [page] {
@@ -123,8 +119,15 @@ alias brewfile = brew bundle dump --force --file=~/.config/homebrew/Brewfile
 alias bo = brew outdated
 alias buf = brew upgrade --formula
 alias buc = brew upgrade --cask
-def brewc [] { brew cleanup --prune=all; brew autoremove; brew doctor }
-def mas-up [] { mas outdated; mas update }
+def brewc [] {
+    brew cleanup --prune=all
+    brew autoremove
+    brew doctor
+}
+def mas-up [] {
+    mas outdated
+    mas update
+}
 alias nfu = nix flake update --flake ~/.config/nix/
 alias drs = sudo darwin-rebuild switch --flake ~/.config/nix/.#marykatemas-macos --impure
 alias hms = home-manager switch --flake ~/.config/nix/.#marykatemas-linux --impure
