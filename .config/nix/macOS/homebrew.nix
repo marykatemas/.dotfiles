@@ -5,14 +5,11 @@ in
 {
   homebrew = {
     enable = true;
-    onActivation = {
-    };
-
+    onActivation = { };
     taps = [ ];
     brews = [ ];
     casks = [ ];
     masApps = { };
-
     extraConfig = brewfile;
   };
 }

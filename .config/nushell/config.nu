@@ -120,12 +120,14 @@ alias lzd = lazydocker
 alias oc = opencode
 alias ghd = gh dash
 alias brewfile = brew bundle dump --force --file=~/.config/homebrew/Brewfile
-alias brew-up-formula = brew upgrade --formula
-alias brew-up-cask = brew upgrade --cask
-def mas-up [] { mas outdated; mas update }
+alias bo = brew outdated
+alias buf = brew upgrade --formula
+alias buc = brew upgrade --cask
 def brewc [] { brew cleanup --prune=all; brew autoremove; brew doctor }
-def drs [] { sudo darwin-rebuild switch --flake ~/.config/nix/.#marykatemas-macos }
-def hms [] { home-manager switch --flake ~/.config/nix/.#marykatemas-linux }
+def mas-up [] { mas outdated; mas update }
+alias nfu = nix flake update --flake ~/.config/nix/
+alias drs = sudo darwin-rebuild switch --flake ~/.config/nix/.#marykatemas-macos --impure
+alias hms = home-manager switch --flake ~/.config/nix/.#marykatemas-linux --impure
 
 # https://github.com/nushell/awesome-nu
 # https://github.com/nushell/nu_scripts

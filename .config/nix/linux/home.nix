@@ -1,13 +1,17 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
+{
   imports = [
     ./packages.nix
   ];
-
   home = {
-    username = "marykatemas";
-    homeDirectory = "/home/marykatemas";
+    username = hostConfig.username;
+    homeDirectory = hostConfig.homeDirectory;
     stateVersion = "26.05";
   };
-
   programs.home-manager.enable = true;
 }

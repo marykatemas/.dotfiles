@@ -1,15 +1,19 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
 {
   security.pam.services.sudo_local = {
     reattach = true;
     touchIdAuth = true;
     watchIdAuth = true;
   };
-
   networking = {
-    localHostName = "marykate-mac";
-    computerName = "marykate macbook";
-    hostName = "marykate.local";
+    localHostName = hostConfig.localHostName;
+    computerName = hostConfig.computerName;
+    hostName = hostConfig.hostName;
     knownNetworkServices = [
       "Wi-Fi"
       "Ethernet Adaptor"
@@ -20,7 +24,6 @@
       "1.0.0.1"
     ];
   };
-
   system.defaults = {
     NSGlobalDomain = {
       InitialKeyRepeat = 10;
@@ -29,15 +32,10 @@
       "com.apple.swipescrolldirection" = false;
       "com.apple.mouse.tapBehavior" = 1;
     };
-
+    smb.NetBIOSName = hostConfig.localHostName;
     trackpad.Clicking = true;
-
     universalaccess.mouseDriverCursorSize = 2.5;
-
-    smb.NetBIOSName = "marykate-mac";
-
     ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
-
     CustomUserPreferences = {
       "NSGlobalDomain" = {
         "com.apple.mouse.linear" = true;

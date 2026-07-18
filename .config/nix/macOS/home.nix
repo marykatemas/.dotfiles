@@ -1,9 +1,14 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
+{
   home = {
-    username = "marykatemas";
-    homeDirectory = lib.mkForce "/Users/marykatemas";
+    username = hostConfig.username;
+    homeDirectory = lib.mkForce hostConfig.homeDirectory;
     stateVersion = "26.05";
   };
-
   programs.home-manager.enable = true;
 }
