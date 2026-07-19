@@ -25,14 +25,18 @@
     ];
   };
   system.defaults = {
+    smb.NetBIOSName = hostConfig.localHostName;
     NSGlobalDomain = {
       InitialKeyRepeat = 10;
-      KeyRepeat = 2;
+      KeyRepeat = 1;
       ApplePressAndHoldEnabled = false;
+      _HIHideMenuBar = true;
+      AppleShowAllFiles = true;
+      AppleShowAllExtensions = true;
       "com.apple.swipescrolldirection" = false;
       "com.apple.mouse.tapBehavior" = 1;
     };
-    smb.NetBIOSName = hostConfig.localHostName;
+    dock.autohide = true;
     trackpad.Clicking = true;
     universalaccess.mouseDriverCursorSize = 2.5;
     ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
