@@ -1,4 +1,2 @@
 [tools]
 rust = "stable"
-node = "lts"
-python = "latest"

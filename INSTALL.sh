@@ -2,19 +2,41 @@
 
 set -euo pipefail
 
-if ! command -v nix; then
-	if [[ "$OSTYPE" == "darwin"* ]]; then
-		curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
-		source "/nix/var/nix/profiles/default/etc/profile.d/nix.sh"
-	else
-		curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
-		source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	if ! xcode-select -p; then
+		sudo xcode-select --install
+		until xcode-select -p; do
+			sleep 10
+		done
 	fi
+	if [[ "$(uname -m)" == "arm64" ]]; then
+		if ! pgrep oahd; then
+			sudo softwareupdate --install-rosetta --agree-to-license
+		fi
+	fi
+	if ! command -v brew; then
+		sudo -v
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		if [[ -x /opt/homebrew/bin/brew ]]; then
+			eval "$(/opt/homebrew/bin/brew shellenv)"
+		elif [[ -x /usr/local/bin/brew ]]; then
+			eval "$(/usr/local/bin/brew shellenv)"
+		fi
+	fi
+	brew analytics off
+	if ! command -v nix; then
+		curl -fsSL https://install.determinate.systems/nix | sh -s -- install
+	fi
+	source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+else
+	if ! command -v nix; then
+		curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
+	fi
+	source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 fi
 
 export NIX_CONFIG="
 extra-experimental-features = nix-command flakes
-build-users-group = nixbld
 "
 
 nix shell nixpkgs#git nixpkgs#stow
@@ -30,17 +52,14 @@ cd ~ && git clone https://github.com/marykatemas/.dotfiles.git
 cd ~/.dotfiles/ && ./stow.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	if ! command -v brew; then
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		eval "$(/opt/homebrew/bin/brew shellenv)"
-	fi
-	brew analytics off
-	nix run nix-darwin/master -- switch --flake ~/.config/nix/.#default --impure
+	sudo nix run nix-darwin/master -- switch --flake ~/.config/nix/.#default --impure
 else
 	nix run home-manager/master -- switch --flake ~/.config/nix/.#default --impure
 fi
 
-# shared 3rd party
+#################
+### 3RD PARTY ###
+#################
 
 if command -v mise; then
 	mise install
@@ -59,4 +78,10 @@ if command -v nu; then
 		echo "$NU_PATH" | sudo tee -a /etc/shells
 	fi
 	chsh -s "$NU_PATH"
+fi
+
+if command -v skhd; then
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		skhd --start-service
+	fi
 fi

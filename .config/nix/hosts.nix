@@ -3,7 +3,6 @@
     let
       sys = builtins.currentSystem;
       userEnv = builtins.getEnv "USER";
-      hostEnv = builtins.getEnv "HOST";
     in
     {
       type = if builtins.match ".*-darwin" sys != null then "darwin" else "linux";
@@ -11,18 +10,18 @@
       username = userEnv;
       homeDirectory =
         if builtins.match ".*-darwin" sys != null then "/Users/${userEnv}" else "/home/${userEnv}";
-      hostName = hostEnv;
-      localHostName = hostEnv;
-      computerName = hostEnv;
+      hostName = "hostNameDefault";
+      localHostName = "localHostNameDefault";
+      computerName = "computerNameDefault";
     };
   marykatemas-macos = {
     type = "darwin";
     system = "aarch64-darwin";
     username = "marykatemas";
     homeDirectory = "/Users/marykatemas";
-    hostName = "marykate-mac";
-    localHostName = "marykate-mac";
-    computerName = "marykate macbook";
+    hostName = "hostMaryKate";
+    localHostName = "localHostMaryKate";
+    computerName = "computerMaryKate";
   };
   marykatemas-linux = {
     type = "linux";

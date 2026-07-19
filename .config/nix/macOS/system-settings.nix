@@ -38,11 +38,28 @@
     };
     dock.autohide = true;
     trackpad.Clicking = true;
+    finder.CreateDesktop = false;
+    finder.FXPreferredViewStyle = "Nlsv";
     universalaccess.mouseDriverCursorSize = 2.5;
     ".GlobalPreferences"."com.apple.mouse.scaling" = 1.0;
     CustomUserPreferences = {
       "NSGlobalDomain" = {
         "com.apple.mouse.linear" = true;
+        TISRomanSwitchState = 1;
+      };
+      "com.apple.HIToolbox" = {
+        AppleEnabledInputSources = [
+          {
+            InputSourceKind = "Keyboard Layout";
+            "KeyboardLayout ID" = 0;
+            "KeyboardLayout Name" = "U.S.";
+          }
+          {
+            InputSourceKind = "Keyboard Layout";
+            "KeyboardLayout ID" = 19458;
+            "KeyboardLayout Name" = "Russian";
+          }
+        ];
       };
     };
   };
