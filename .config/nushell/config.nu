@@ -129,9 +129,9 @@ def mas-up [] {
     mas outdated
     mas update
 }
-alias nfu = nix flake update --flake ~/.config/nix/
-alias drs = sudo darwin-rebuild switch --flake ~/.config/nix/.#marykatemas-macos --impure
-alias hms = home-manager switch --flake ~/.config/nix/.#marykatemas-linux --impure
+alias nfu = nix flake update --flake ~/.dotfiles/.config/nix/
+alias drs = sudo darwin-rebuild switch --flake ~/.dotfiles/.config/nix/.#marykatemas-macos --impure
+alias hms = home-manager switch --flake ~/.dotfiles/.config/nix/.#marykatemas-linux --impure
 
 # https://github.com/nushell/awesome-nu
 # https://github.com/nushell/nu_scripts
