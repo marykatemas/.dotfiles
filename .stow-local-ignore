@@ -23,7 +23,7 @@ _darcs
 ^/COPYING
 
 ^\.DS_Store$
-^INSTALL\.sh$
 ^AGENTS\.md$
+^INSTALL\.sh$
 ^assets$
 ^styles$

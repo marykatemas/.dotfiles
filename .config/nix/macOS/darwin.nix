@@ -14,8 +14,8 @@
   nix.enable = false;
   system.primaryUser = hostConfig.username;
   nixpkgs.hostPlatform = hostConfig.system;
-  system.stateVersion = 6;
   nixpkgs.config.allowUnfree = true;
+  system.stateVersion = 6;
   environment =
     let
       brewPrefix = if pkgs.stdenv.hostPlatform.isAarch64 then "/opt/homebrew" else "/usr/local";
