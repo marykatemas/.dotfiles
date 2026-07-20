@@ -142,9 +142,9 @@ deduplicateAppIcons = false
 enabled = true
 excludedBundleIDs = []
 height = 24.0
-hideEmptyWorkspaces = false
-notchActiveZoneWidth = 180.0
-notchMode = "moveBelowMenuBar"
+hideEmptyWorkspaces = true
+notchActiveZoneWidth = 0.0
+notchMode = "splitActiveRight"
 position = "overlappingMenuBar"
 reserveLayoutSpace = false
 revealHoldMilliseconds = 200.0
@@ -154,7 +154,7 @@ showLabels = true
 systemStatsButton = true
 windowLevel = "popup"
 xOffset = 0.0
-yOffset = 0.0
+yOffset = 8.0
 
 [[appRules]]
 bundleId = "com.openai.codex"

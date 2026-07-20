@@ -30,7 +30,7 @@
       InitialKeyRepeat = 10;
       KeyRepeat = 1;
       ApplePressAndHoldEnabled = false;
-      _HIHideMenuBar = true;
+      _HIHideMenuBar = false;
       AppleShowAllFiles = true;
       AppleShowAllExtensions = true;
       "com.apple.swipescrolldirection" = false;

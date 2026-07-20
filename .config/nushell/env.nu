@@ -61,6 +61,7 @@ path add ($env.HOME | path join ".local" "bin")
 path add "/nix/var/nix/profiles/default/bin"
 path add "/run/current-system/sw/bin"
 path add ("/etc/profiles/per-user" | path join (whoami) "bin")
+# path add ($env.HOME | path join ".orbstack" "bin")
 
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"

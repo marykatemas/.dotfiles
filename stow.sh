@@ -8,14 +8,13 @@ BACKUP_SUFFIX="$(date +%Y%m%d-%H%M%S)"
 
 cd "$DOTFILES_DIR"
 
-mkdir -p "$BACKUP_DIR"
-
 for item in * .[^.]*; do
 	[[ "$item" == "." || "$item" == ".." ]] && continue
 
 	target="$HOME/$item"
 
 	if [ -e "$target" ] && [ ! -L "$target" ]; then
+		mkdir -p "$BACKUP_DIR"
 		backup="$BACKUP_DIR/${item}.bak.${BACKUP_SUFFIX}"
 		echo "backing up $target to $backup"
 		mv "$target" "$backup"
