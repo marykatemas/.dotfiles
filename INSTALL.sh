@@ -27,12 +27,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	if ! command -v nix; then
 		curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 	fi
-	source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+	. "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 else
 	if ! command -v nix; then
 		curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
 	fi
-	source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+	. "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 fi
 
 export NIX_CONFIG="

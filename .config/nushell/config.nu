@@ -106,6 +106,7 @@ def man [page] {
 }
 
 # aliases
+alias mkm = cd ~/MARYKATEMAS/
 alias v = nvim
 alias c = clear
 alias l = ls --all

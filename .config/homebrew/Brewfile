@@ -68,6 +68,8 @@ cask "obsidian"
 cask "barutsrb/tap/omniwm", trusted: true
 # Document editor
 cask "onlyoffice"
+# Whisper dictation/transcription app
+cask "opensuperwhisper"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Control your tools with a few keystrokes
