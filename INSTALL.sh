@@ -49,7 +49,19 @@ fi
 
 cd ~ && git clone https://github.com/marykatemas/.dotfiles.git
 
-cd ~/.dotfiles/ && ./stow.sh
+cd ~/.dotfiles/
+for item in * .[^.]*; do
+	[[ "$item" == "." || "$item" == ".." ]] && continue
+	target="$HOME/$item"
+	if [ -e "$target" ] && [ ! -L "$target" ]; then
+		mkdir -p "$HOME/.dotfiles.bak"
+		backup="$HOME/.dotfiles.bak/${item}.bak.$(date +%Y%m%d-%H%M%S)"
+		echo "backing up $target to $backup"
+		mv "$target" "$backup"
+	fi
+done
+stow -t "$HOME" .
+echo "stowed ✓"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	sudo nix run nix-darwin/master -- switch --flake ~/.config/nix/.#default --impure
