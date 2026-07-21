@@ -9,3 +9,4 @@ shift + ctrl + alt + cmd - o : ~/.config/skhd/scripts/launch.sh Obsidian
 shift + ctrl + alt + cmd - a : ~/.config/skhd/scripts/launch.sh "Activity Monitor"
 shift + ctrl + alt + cmd - d : ~/.config/skhd/scripts/launch.sh Discord
 shift + ctrl + alt + cmd - c : ~/.config/skhd/scripts/launch.sh Clock
+shift + ctrl + alt + cmd - l : ~/.config/skhd/scripts/launch.sh "Logic Pro"
