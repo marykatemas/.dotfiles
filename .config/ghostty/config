@@ -4,7 +4,7 @@ background-blur-radius = 25
 window-padding-x = 8
 window-padding-y = 8
 
-# og themes for customization
+# ghostty themes path (macOS) for customization
 # /Applications/Ghostty.app/Contents/Resources/ghostty/themes
 theme = oxocarbon-black-bg.conf
 font-family = JetBrainsMono NF

@@ -14,7 +14,7 @@
       localHostName = "localHostNameDefault";
       computerName = "computerNameDefault";
     };
-  marykatemas-macos = {
+  marykatemas-darwin = {
     type = "darwin";
     system = "aarch64-darwin";
     username = "marykatemas";

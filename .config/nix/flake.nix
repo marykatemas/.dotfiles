@@ -29,7 +29,7 @@
             hostConfig = cfg;
           };
           modules = [
-            ./macOS/darwin.nix
+            ./darwin
             home-manager.darwinModules.home-manager
             {
               home-manager = {
@@ -38,7 +38,7 @@
                 extraSpecialArgs = {
                   hostConfig = cfg;
                 };
-                users.${cfg.username} = import ./macOS/home.nix;
+                users.${cfg.username} = import ./darwin/home.nix;
               };
             }
           ];

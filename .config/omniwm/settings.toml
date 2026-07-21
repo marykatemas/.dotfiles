@@ -154,7 +154,7 @@ showLabels = true
 systemStatsButton = true
 windowLevel = "popup"
 xOffset = 0.0
-yOffset = 8.0
+yOffset = 8.0                   # aligns with boringNotch's center
 
 [[appRules]]
 bundleId = "com.openai.codex"
