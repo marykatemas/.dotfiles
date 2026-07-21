@@ -46,7 +46,6 @@ pkgs: with pkgs; [
   nushell
   ollama
   ripgrep
-  opencode
   p7zip
   pnpm
   poppler

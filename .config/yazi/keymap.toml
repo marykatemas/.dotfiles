@@ -1,3 +1,15 @@
 [mgr]
-prepend_keymap = [{ on = "?", run = "help", desc = "Open help" }]
-# append_keymap = [{}]
+prepend_keymap = [
+  { on = "?", run = "help", desc = "Open help" },
+  { on = "<C-a>", run = "act1", desc = "Single action with `Ctrl + a`" },
+]
+append_keymap = [
+  { on = [
+    "g",
+    "b",
+  ], run = "act2", desc = "Single action with `g ⇒ b`" },
+  { on = "c", run = [
+    "act1",
+    "act2",
+  ], desc = "Multiple actions with `c`" },
+]

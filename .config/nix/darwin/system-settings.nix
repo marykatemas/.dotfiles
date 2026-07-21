@@ -27,16 +27,23 @@
   system.defaults = {
     smb.NetBIOSName = hostConfig.localHostName;
     NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";
       InitialKeyRepeat = 10;
       KeyRepeat = 1;
       ApplePressAndHoldEnabled = false;
-      _HIHideMenuBar = true;
+      _HIHideMenuBar = false;
       AppleShowAllFiles = true;
       AppleShowAllExtensions = true;
       "com.apple.swipescrolldirection" = false;
       "com.apple.mouse.tapBehavior" = 1;
     };
-    dock.autohide = true;
+    dock = {
+      autohide = false;
+      persistent-apps = [ ];
+      persistent-others = [ ];
+      orientation = "left";
+      tilesize = 24;
+    };
     trackpad.Clicking = true;
     finder.CreateDesktop = false;
     finder.FXPreferredViewStyle = "Nlsv";

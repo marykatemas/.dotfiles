@@ -33,21 +33,21 @@ splitWidthMultiplier = 1.0
 useGlobalGaps = true
 
 [focus]
-crossesMonitorAtEdge = false
+crossesMonitorAtEdge = true
 followsMouse = false
-followsWindowToMonitor = false
+followsWindowToMonitor = true
 lockModifier = "off"
-moveCrossesMonitorAtEdge = false
-moveMouseToFocusedWindow = false
+moveCrossesMonitorAtEdge = true
+moveMouseToFocusedWindow = true
 
 [gaps]
-size = 0.0
+size = 2.0
 
 [gaps.outer]
-bottom = 0.0
-left = 0.0
-right = 0.0
-top = 0.0
+bottom = 2.0
+left = 2.0
+right = 2.0
+top = 2.0
 
 [general]
 animationsEnabled = false
@@ -71,7 +71,7 @@ workspaceSwipeEnabled = false
 workspaceSwipeFingerCount = 3
 
 [hiddenBar]
-enabled = true
+enabled = false
 hiddenBundleIDs = []
 rehideIntervalSeconds = 5.0
 
@@ -81,10 +81,9 @@ enabled = true
 margin = 1
 
 [niri]
-alwaysCenterSingleColumn = false
+alwaysCenterSingleColumn = true
 centerFocusedColumn = "never"
 columnWidthPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
-defaultColumnWidth = 0.5
 infiniteLoop = false
 maxVisibleColumns = 2
 singleWindowAspectRatio = "fill"
@@ -120,7 +119,7 @@ red = 0.3
 
 [quakeTerminal]
 animationDuration = 0.2
-autoHide = false
+autoHide = true
 enabled = true
 heightPercent = 50.0
 monitorMode = "focusedWindow"
@@ -138,13 +137,13 @@ useWorkspaceId = false
 
 [workspaceBar]
 backgroundOpacity = 0.1
-deduplicateAppIcons = false
+deduplicateAppIcons = true
 enabled = true
 excludedBundleIDs = []
 height = 24.0
-hideEmptyWorkspaces = true
-notchActiveZoneWidth = 0.0
-notchMode = "splitActiveRight"
+hideEmptyWorkspaces = false
+notchActiveZoneWidth = 180.0
+notchMode = "moveBelowMenuBar"
 position = "overlappingMenuBar"
 reserveLayoutSpace = false
 revealHoldMilliseconds = 200.0
@@ -154,7 +153,7 @@ showLabels = true
 systemStatsButton = true
 windowLevel = "popup"
 xOffset = 0.0
-yOffset = 8.0                   # aligns with boringNotch's center
+yOffset = -9999.0
 
 [[appRules]]
 bundleId = "com.openai.codex"
@@ -819,7 +818,7 @@ binding = "Option+Grave"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Slash"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
@@ -887,7 +886,7 @@ name = "7"
 type = "secondary"
 
 [[workspaces]]
-id = "F1E826EA-3AE0-4591-98BC-590F3A26AC8B"
+id = "5E2F7DEE-0882-46ED-A5A7-FB45B8A519E2"
 layoutType = "niri"
 name = "8"
 
@@ -895,7 +894,7 @@ name = "8"
 type = "secondary"
 
 [[workspaces]]
-id = "A3697314-5C56-4E14-8A4B-32DD1E919124"
+id = "1A3C850D-FFA6-4B05-92A4-8A861FA714ED"
 layoutType = "niri"
 name = "9"
 

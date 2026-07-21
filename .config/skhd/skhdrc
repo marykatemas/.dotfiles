@@ -1,5 +1,5 @@
-shift + ctrl + alt + cmd - m : ~/.config/skhd/scripts/toggle_audio_input.sh
-shift + ctrl + alt + cmd - v : ~/.config/skhd/scripts/toggle_audio_output.sh
+shift + ctrl + alt + cmd - m : ~/.config/skhd/scripts/toggle-audio-input.sh
+shift + ctrl + alt + cmd - v : ~/.config/skhd/scripts/toggle-audio-output.sh
 
 shift + ctrl + alt + cmd - g : ~/.config/skhd/scripts/launch.sh Ghostty
 shift + ctrl + alt + cmd - s : ~/.config/skhd/scripts/launch.sh Safari
